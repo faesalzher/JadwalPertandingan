@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.minn.css"/>
+  <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flats.css" />
+
+  <style>
+  @font-face {
+    font-family: 'PremierSans-Regular';
+    src: url('./fonts/PremierLeagueW01-Regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'PremierSans-Bold';
+    src: url('./fonts/PremierLeagueW01-Bold.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'PremierSans-Light';
+    src: url('./fonts/PremierLeagueW01-Light.woff2') format('woff2');
+  }
+  li {
+    list-style-type: none;
+  }
+
+  #klub h2 {
+    font-family: 'PremierSans-Regular';
+    width: 200px;
+    margin-top: 20px;
+  }
+   #week h2 {
+    font-family: 'PremierSans-Regular';
+    width: 200px;
+  }
+  #jenismatch h2 {
+    font-family: 'PremierSans-Regular';
+  }
+  .list {
+    size: 20px;
+    color: azure;
+  }
+  body {
+    font-family: 'PremierSans-Regular', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-purple{
+    background: linear-gradient(to right, #400851, #400851, #400851);
+  }
+  .list{
+   font-family: 'PremierSans-Regular', Roboto, Helvetica, Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+ }
+ .agile_container{
+  padding:.5em 2em;
+  background-color: #4de2f9;  
+}
+.img-responsive{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.header-white{
+  color:white;
+}
+.header-purple{
+  color:#400851;
+}
+.logo{
+    height: 30px;
+    padding: 0px;
+    margin: 0;
+    margin-bottom: -12px;
+}
+.jenis{
+ margin-top: 40px;
+ margin-bottom: 190px;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 200px;
+}
+
+.detail{
+ margin-top: 160px;
+ margin-bottom: 20px;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 200px;
+}
+.logoclub{
+ border-radius: 5px;
+ width: 40px;
+ margin-top: 20px;
+ margin-right: -20px;
+ margin-left: 20px;
+}
+.logoclubheader{
+  width: 140px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+</head>
+<body>
+ <!-- halaman pertama -->
+ <div data-role="page" id="page-one" data-theme="c">
+  <div data-role="header" class="nav-purple">
+    <center><img src="images/pl-white.png" alt=" " class="logo" /></center>
+    <h1 class="header-white">Match Fixtures</h1>
+  </div>
+  <div class="agile_container" data-theme="b">
+    <img src="images/banner1.png" alt=" " class="img-responsive" />
+  </div>
+  <hr>
+  <div class="daftar" align="center"><h1 class="header-purple">------Lists Of Clubs-----</h1></div>
+  <hr>
+  <div role="main" class="ui-content">
+    <ul id="list-club"  data-role="listview" data-insert="true" data-theme="b"></ul>
+  </div>
+</div>
+<!-- halaman kedua -->
+<div data-role="page-two" id="page-two" data-theme="b">
+  <div data-role="header" class="nav-purple">
+    <center><img src="images/pl-white.png" alt=" " class="logo" /></center>
+    <h1 class="header-white">Fixture Type</h1>
+  </div>
+  <h1 id="p-logo"></h1>
+  <h1 align = "center" id="p-nama"></h1>
+
+  <div role="main" class="jenis">
+    <ul id="list-jenis" data-role="listview"></ul>
+  </div>
+</div>
+<!-- halaman ketiga home -->
+<div data-role="page-threehome" id="page-threehome" data-theme="b">
+ <div data-role="header"class="nav-purple">
+  <center><img src="images/pl-white.png" alt=" " class="logo" /></center>
+  <h1>Home Fixtures</h1>
+</div>
+<div role="main" class="ui-content">
+  <ul id="list-weekhome" data-role="listview"></ul>
+</div>
+</div>
+<!-- halaman ketiga away -->
+<div data-role="page-threeaway" id="page-threeaway" data-theme="b">
+  <div data-role="header" class="nav-purple">
+    <center><img src="images/pl-white.png" alt=" " class="logo" /></center>
+    <h1>Away Fixtures</h1>
+  </div>
+  <div role="main" class="ui-content ">
+    <ul id="list-weekaway" data-role="listview"></ul>
+  </div>
+</div>
+<!-- halaman keempat home -->
+
+<div data-role="page-four" id="page-four" data-theme="d">
+ <div data-role="header" class="nav-purple">
+  <center><img src="images/pl-white.png" alt=" " class="logo" /></center>
+  <h1>Match Detail</h1>
+</div>
+<div role="main" class="detail">
+  <ul  align="center" id="list-detailpertandinganhome" data-role="listview"></ul>
+</div>
+</div>
+<!-- halaman keempat away -->
+<div data-role="page-fouraway" id="page-fouraway" data-theme="d">
+ <div data-role="header" class="nav-purple">
+  <center><img src="images/pl-white.png" alt=" " class="logo" /></center>
+  <h1>Match Detail</h1>
+</div>
+<div role="main" class="detail">
+  <ul  align="center" id="list-detailpertandinganaway" data-role="listview"></ul>
+</div>
+</div>
+<!-- script -->
+<script src="js/ap.js" type="text/javascript"></script>
+<script>Application.initApplication();</script>
+</body>
+</html>
+</html>
